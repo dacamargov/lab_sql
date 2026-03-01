@@ -45,7 +45,7 @@ La Free Edition ofrece un sitio de Databricks workspace fácil de usar, donde es
 * [BLOG - 7 Techniques of Semantic Modeling for Databricks Genie](https://medium.com/@kyle.hale/7-techniques-of-semantic-modeling-for-databricks-genie-b117460efe10)
 * [Databricks Free Edition - Documentación](https://docs.databricks.com/aws/pt/getting-started/free-edition)
 
-## Comunidad Databricks Brasil
+## Comunidad Databricks LATAM
 
 - Grupo en LinkedIn [Databricks Brasil - Lakehouse 🏠 🇧🇷](https://www.linkedin.com/groups/14100135)
 
