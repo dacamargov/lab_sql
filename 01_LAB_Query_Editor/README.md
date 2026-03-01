@@ -1,22 +1,21 @@
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/header_handson_sql.png">
 
-# Hands-On LAB 01 - Explorando o Editor de Query
+# Hands-On LAB 01 - Explorando el Editor de Consultas
 
-Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Analytics (SQL, Query, DataViz, Genie).
+Entrenamiento práctico en la plataforma Databricks con enfoque en las funcionalidades de Analytics (SQL, Consultas, Visualización de Datos, Genie).
 
 
-## Objetivos do Exercício
+## Objetivos del Ejercicio
 
-O objetivo desse laboratório é conhecer as funcionalidades de consulta (_Query_) da plataforma Databricks, utilizando a linguagem SQL (e as interfaces visuais), explorando os potenciais Analíticos. </br>
-</br>
-Os exercícios deverão ser executados na opção do Menu lateral "**SQL Editor**".
+El objetivo de este laboratorio es conocer las funcionalidades de consulta (Query) de la plataforma Databricks, utilizando el lenguaje SQL (y las interfaces visuales), explorando los potenciales Analíticos.
+Los ejercicios deberán ejecutarse en la opción del Menú lateral "SQL Editor".
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab01_1.png?raw=true">
 
 
 </br></br></br>
-## Sessão 01:  Estrutura TABELAS, DATABASE e CATÁLOGOS
+## Sesión 01: Estructura de TABLAS, DATABASE y CATÁLOGOS
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab01_uc.png">
 
@@ -28,10 +27,10 @@ Os exercícios deverão ser executados na opção do Menu lateral "**SQL Editor*
 | **Tabela** | CREATE OR REPLACE TABLE  <nome_catalogo>.<nome_database>.<nome_tabela>; |
 | **View** |  CREATE OR REPLACE VIEW  <nome_catalogo>.<nome_database>.<nome_tabela> AS ...; |
 
-#### Referência:
+#### Referencia::
 * [Databricks Help - DDL Syntax](https://docs.databricks.com/sql/language-manual/sql-ref-syntax-ddl-create-table.html)
 
-## Exercício 01.01 - Criação do catálago e database
+## Ejercicio 01.01 - Creación del catálogo y database
 
 ``` sql
 --GRANT CREATE CATALOG ON METASTORE TO `account users`;
@@ -42,38 +41,39 @@ CREATE DATABASE IF NOT EXISTS <seu_usuario>;
 USE <seu_usuario>;
 ```
 
-## Exercício 01.02 - Criação da Tabela
-1. Na primeira query do laboratório realizamos a criação de catálago e database e utilizamos a cláusula *USE*, mas ela só é persistida em tempo de execução;
-2. Devemos sempre atribuir o nome do catálago e database antes do nome da tabela separado por "." (catalogo.<seu_usuario>.porte_empresa)</br>
-ou podemos especificar o catálago e database que queremos usar no próprio editor conforme imagem abaixo:
+## Ejercicio 01.02 - Creación de la Tabla
+
+En la primera consulta del laboratorio realizamos la creación de catálogo y database y utilizamos la cláusula USE, pero solo se persiste en tiempo de ejecución;
+Siempre debemos asignar el nombre del catálogo y database antes del nombre de la tabla separado por "." (catalogo.<seu_usuario>.porte_empresa)
+o podemos especificar el catálogo y database que queremos usar en el propio editor como se muestra en la imagen a continuación:
 </br></br>
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab01_setcatalago.png?raw=true">
 </br></br>
 
-3. Crie a tabela a seguir:
+3. Crear la siguiente tabla:
 
 ``` sql
 CREATE OR REPLACE TABLE porte_empresa 
-  ( id_natureza_juridica    INT     COMMENT "codigo do porte da empresa",
-    sig_natureza_juridica   STRING  COMMENT "sigla que representa a natureza juridica da empresa",
-    desc_natureza_juridica  STRING  COMMENT "descricao da natura juridica" )
-COMMENT "Tabela auxiliar do tipo de natureza juridica das empresas";
+  ( id_natureza_juridica    INT     COMMENT "codigo del porte de la empresa",
+    sig_natureza_juridica   STRING  COMMENT "sigla que representa la naturaleza jurídica de la empresa",
+    desc_natureza_juridica  STRING  COMMENT "descripción de la naturaleza jurídica" )
+COMMENT "Tabla auxiliar del tipo de naturaleza jurídica de las empresas";
 ```
 </br>
 
- ## Exercício 01.03 - Inserindo dados na Tabela através de SQL INSERT
+ ## Ejercicio 01.03 - Insertando datos en la Tabla mediante SQL INSERT
 
  ``` sql
- INSERT INTO porte_empresa VALUES (1, "MEI", "Microempreendedor Individual") ;
- INSERT INTO porte_empresa VALUES (2, "EI", "Empresario Individual") ;
- INSERT INTO porte_empresa VALUES (3, "SLU", "Sociedade Limitada Unipessoal") ;
- INSERT INTO porte_empresa VALUES (4, "LTDA", "Sociedade Empresaria Limitada") ;
- INSERT INTO porte_empresa VALUES (5, "SS", "Sociedade Simples") ;
- INSERT INTO porte_empresa VALUES (6, "S/A", "Sociedade Anônima") ;
- INSERT INTO porte_empresa VALUES (7, "NULL", "NULL") ;
+INSERT INTO porte_empresa VALUES (1, "MEI", "Microemprendedor Individual") ;
+INSERT INTO porte_empresa VALUES (2, "EI", "Empresario Individual") ;
+INSERT INTO porte_empresa VALUES (3, "SLU", "Sociedad Limitada Unipersonal") ;
+INSERT INTO porte_empresa VALUES (4, "LTDA", "Sociedad Empresarial Limitada") ;
+INSERT INTO porte_empresa VALUES (5, "SS", "Sociedad Simple") ;
+INSERT INTO porte_empresa VALUES (6, "S/A", "Sociedad Anónima") ;
+INSERT INTO porte_empresa VALUES (7, "NULL", "NULL") ;
 ```
 
- ## Exercício 01.04 - Verificando o conteúdo da TABELA
+ ## Ejercicio 01.04 - Verificando el contenido de la TABLA
 
  ``` sql
 SELECT * 
@@ -81,11 +81,11 @@ FROM porte_empresa
 ORDER BY id_natureza_juridica;
 ```
 
- ## Exercício 01.05 - Alterando o conteúdo da TABELA
+ ## Ejercicio 01.05 - Modificando el contenido de la TABLA
 
  ``` sql
 UPDATE porte_empresa  
-SET desc_natureza_juridica = "OUTROS" 
+SET desc_natureza_juridica = "OTROS" 
 WHERE id_natureza_juridica = 7;
 ```
 
@@ -105,64 +105,71 @@ WHERE id_natureza_juridica = 7;
 SELECT * FROM porte_empresa;
 ```
 
-## Exerício 01.06 - Liquid Clustering
-O Liquid clustering substitui o particionamento de tabelas e o ZORDER para simplificar as decisões de disposição de dados e otimizar o desempenho das consultas. Ele oferece a flexibilidade de redefinir a chave clustering sem reescrever os dados existentes, permitindo que a disposição dos dados evolua junto com as necessidades analíticas ao longo do tempo.
+## Ejercicio 01.06 - Liquid Clustering
 
-Mas quando aplicar liquid clustering ?
-* Tabelas normalmente filtradas por colunas de alta cardinalidade.</br>
-* Tabelas com grande distorção na distribuição de dados.</br>
-* Tabelas que crescem rapidamente e exigem manutenção e ações de ajuste.</br>
-* Tabelas com requisitos de gravação concorrente.</br>
-* Tabelas com padrões de acesso que mudam com o tempo.</br>
-* Tabelas em que uma chave de partição típica poderia deixar a tabela com muitas ou poucas partições.</br>
+El Liquid Clustering reemplaza la partición de tablas y el ZORDER para simplificar las decisiones de disposición de datos y optimizar el rendimiento de las consultas. Ofrece la flexibilidad de redefinir la clave de clustering sin reescribir los datos existentes, permitiendo que la disposición de los datos evolucione junto con las necesidades analíticas a lo largo del tiempo.
 
-A sintaxe para habilitar essa funcionalidade em uma tabela já criada é: </br>
-<span style="color:red"> **NÃO EXECUTAR** </span>
+¿Pero cuándo aplicar liquid clustering?
+
+*Tablas normalmente filtradas por columnas de alta cardinalidad.
+
+*Tablas con gran distorsión en la distribución de datos.
+
+*Tablas que crecen rápidamente y requieren mantenimiento y ajustes.
+
+*Tablas con requisitos de escritura concurrente.
+
+*Tablas con patrones de acceso que cambian con el tiempo.
+
+*Tablas en las que una clave de partición típica podría dejar la tabla con muchas o pocas particiones.
+
+La sintaxis para habilitar esta funcionalidad en una tabla ya creada es:
+<span style="color:red"> NO EJECUTAR </span>
 ```sql
 ALTER TABLE <table_name>
 CLUSTER BY (<clustering_columns>)
 ```
-Além disso podemos deixar a própria Plataforma de dados inteligente da databricks definir quais são as melhores colunas da nossa tabela para serem definidas como *clustering*.</br>
-<span style="color:green"> **VAMOS EXECUTAR ESSE EXEMPLO** </span>
+Además, podemos dejar que la propia plataforma de datos inteligente de Databricks defina cuáles son las mejores columnas de nuestra tabla para ser definidas como clustering.
+<span style="color:green"> EJECUTAREMOS ESTE EJEMPLO </span>
 ```sql
--- captura informacoes antes de ativar o recurso
+-- captura información antes de activar la funcionalidad
 DESC EXTENDED porte_empresa;
 
 ALTER TABLE porte_empresa
 CLUSTER BY AUTO;
 
--- captura informacoes depois de ativar o recurso
+-- captura información después de activar la funcionalidad
 DESC EXTENDED porte_empresa;
 ```
-#### Referências:
+#### Referencias:
 * [Databricks Liquid Clustering](https://docs.databricks.com/aws/pt/delta/clustering)
 * [BLOG - Announcing Automatic Liquid Clustering](https://www.databricks.com/blog/announcing-automatic-liquid-clustering)
 
-## Exercício 01.07 - Visualizando o Histórico de Atualizações da tabela
+## Ejercicio 01.07 - Visualizando el Historial de Actualizaciones de la tabla
 
  ``` sql
 DESCRIBE HISTORY porte_empresa ;
 ```
 
-## Exercício 01.08 - Visualizando o conteúdo da tabela na versão anterior (TIME TRAVEL)
+## Ejercicio 01.08 - Visualizando el contenido de la tabla en la versión anterior (TIME TRAVEL)
 
  ``` sql
 SELECT * FROM porte_empresa VERSION AS OF 7;
 ```
 
-## Exercício 01.09 - RESTAURANDO o conteúdo da tabela na versão anterior (TIME TRAVEL)
+## Ejercicio 01.09 - RESTAURANDO el contenido de la tabla a la versión anterior (TIME TRAVEL)
 
  ``` sql
 RESTORE TABLE porte_empresa TO VERSION AS OF 7;
 ```
 
-## Exercício 01.10 - Visualizando as propriedades da Tabela
+## Ejercicio 01.10 - Visualizando las propiedades de la Tabla
 
  ``` sql
 DESCRIBE DETAIL porte_empresa ;
 ```
 
-## Exercício 01.11 - Visualizando as informações DETALHADAS da Tabela
+## Ejercicio 01.11 - Visualizando la información DETALLADA de la Tabla
 
  ``` sql
 DESCRIBE TABLE EXTENDED porte_empresa;
