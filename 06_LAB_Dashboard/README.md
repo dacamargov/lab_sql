@@ -45,7 +45,7 @@ Gráfico de líneas del valor de cierre por día y por empresa
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab05_1.png?raw=true" width="800px">
 </br></br></br>
 
-## Exercício 02.03 - Adicionando um FILTRO de página
+## Exercício 02.03 - Adicionando un FILTRO de página
 
 Haga click en el menu azul en el incone de FILTRO.</br>
 Escoja el atributo (Field):  "**company**"
