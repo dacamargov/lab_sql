@@ -1,104 +1,101 @@
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/header_genie.png">
 
-# Hands-On LAB 03 - Criando o AI/BI Genie
+# Hands-On LAB 03 - Creando el AI/BI Genie
 
-Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de perguntas e respostas usando linguagem natural.
+Entrenamiento Hands-on en la plataforma Databricks con enfoque en las funcionalidades de preguntas y respuestas usando lenguaje natural.
 
 </br></br>
 
 ## Objetivos do Exercício
 
-O objetivo desse laboratório é usar o AI/BI Genie para permitir a análise de dados de vendas utilizando somente **Português**.</br> 
-***Caso não tenha feito ainda, carregue os dados conforme descrito no Lab 02 - LAB_Notebook.***
+El objetivo de este laboratorio es usar el AI/BI Genie para permitir el análisis de datos de ventas utilizando únicamente **Español**.</br> 
+***Si aún no lo ha hecho, cargue los datos según lo descrito en el Lab 02 - LAB_Notebook..***
 </br></br>
 
-## Exercício 03.00 - Preparação
+## Ejercicio 03.00 - Preparación
 
-1. Em alguns momentos, utilizaremos o SQL Editor. Deixe-o preparado em uma outra janela e selecione seu database.
+1. En algunos momentos, utilizaremos el SQL Editor. Déjelo preparado en otra ventana y seleccione su database.
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_1.png?raw=true">
 
 </br></br>
 
-## Exercício 03.01 - Criar AI/BI Genie
+## Ejercicio 03.01 - Crear AI/BI Genie
 
-Vamos começar criando uma Genie para fazer nossas perguntas. Para isso, vamos seguir os passos abaixo:
+Vamos a comenzar creando un Genie para hacer nuestras preguntas. Para ello, sigamos los pasos a continuación:
 
-1. No menu principal (à esquerda), clique em `New` > `Genie space`
+1. En el menú principal (a la izquierda), haga clic en `New` > `Genie space`
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_01.png" width=300><br><br>
 
-2. Configure sua Genie
-    - Selecione as seguintes tabelas:
+2. Configure su Genie
+    - Seleccione las seguintes tablas:
         - vendas
         - estoque
         - dim_medicamento
         - dim_loja
-    - Clique em `Create`
+    - Haga click en `Create`
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_3.png?raw=true" width=300></br></br> 
 
-3. Altere o nome da sua Genie Space e seu espaço deve ficar assim:
+3. Cambie el nombre de su Genie Space y su espacio debe quedar así:
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_4.png?raw=true" width=700> </br>
 
-4. Clique em **Instructions** e atribua a seguinte instrução para que a resposta da Genie sejam em português
+4. Haga clic en **Instructions** y asigne la siguiente instrucción para que la respuesta de la Genie sea en español
 
     ``` %md
-    * responda em português (Brasil)
+    * responda en Español 
     ```
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_port.png?raw=true" width=500></br></br> 
 </br></br>
 
-## Exercício 03.02 - Fazendo perguntas ao AI/BI Genie
+## Ejercicio 03.02 - Haciendo preguntas al AI/BI Genie
 
-Com nossa Genie preparada, podemos começar a fazer nossas análises!
+¡Con nuestra Genie preparada, podemos comenzar a hacer nuestros análisis!
 
-Basta usar o chat para fazer as perguntas abaixo:
-
-- Qual o faturamento em out/22?
-- Agora, quebre por produto
-- Mantenha somente os 10 produtos com maior faturamento
-- Gostaria de obter o nome do produto invés do id
-- Qual o total de produtos vendidos em genéricos?
-- Qual o valor total vendido de ansiolíticos?
-- Quais produtos tiveram uma proporção de vendas por estoque maior que 0.8 em Outubro de 2022?
+Basta usar el chat para hacer las preguntas a continuación:
+- ¿Cuál fue la facturación en oct/22?
+- Ahora, desglóselo por producto
+- Mantenga solo los 10 productos con mayor facturación
+- Me gustaría obtener el nombre del producto en lugar del id
+- ¿Cuál es el total de productos vendidos en genéricos?
+- ¿Cuál fue el valor total vendido de ansiolíticos?
+- ¿Qué productos tuvieron una proporción de ventas por stock mayor a 0.8 en octubre de 2022?
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_05.png"><br><br>
 
-Notem que, mesmo com muito pouco contexto, a Genie já conseguiu:
-- Inferir quais as tabelas e colunas relevantes para responder nossas perguntas
-- Aplicar filtros e agregações
-- Responder perguntas adicionais sobre uma resposta anterior
-- Entender como utilizar jargões
-- Combinar diferentes tabelas
+Noten que, incluso con muy poco contexto, la Genie ya logró:
+- Inferir cuáles son las tablas y columnas relevantes para responder nuestras preguntas
+- Aplicar filtros y agregaciones
+- Responder preguntas adicionales sobre una respuesta anterior
+- Entender cómo utilizar jerg
+- Combinar diferentes tablas
 - Calcular métricas derivadas
-
-Aproveitem para explorar e fazer perguntas adicionais!
-
+¡Aprovechen para explorar y hacer preguntas adicionales!
 </br>
 
-## Exercício 03.03 - Usando comentários e *constraints*
+## Ejercicio 03.03 - Usando comentarios y constraints
 
-Mesmo assim, podem ocorrer cenários onde precisaremos fornecer algum contexto adicional à Genie para obter respostas mais precisas.
+Aun así, pueden ocurrir escenarios donde necesitaremos proporcionar algún contexto adicional a la Genie para obtener respuestas más precisas.
 
-Agora, vamos explorar algumas formas de auxiliar a Genie quando identificarmos alguma necessidade.
+Ahora, vamos a explorar algunas formas de ayudar a la Genie cuando identifiquemos alguna necesidad.
 
-A primeira delas é documentar nossas tabelas. Todos os comentários que adicionamos às tabelas são utilizados pela Genie para entender melhor o que é aquele dado.
+La primera de ellas es documentar nuestras tablas. Todos los comentarios que agregamos a las tablas son utilizados por la Genie para entender mejor qué representa cada dato.
 
-Outra boa prática é adicionar *constraints* a tabela, ajudando a Genie a realizar a associação de maneira correta entre as tabelas
+Otra buena práctica es agregar constraints a la tabla, ayudando a la Genie a realizar la asociación de manera correcta entre las tablas.
 
-Vamos ver como funciona!
+¡Vamos a ver cómo funciona!
 
-1. Faça a seguinte pergunta:
+1. Haga la seguinte pregunta:
    ```%md 
-    Qual o valor total de venda por loja? Exiba o nome da loja
+    ¿Cuál es el valor total de ventas por tienda? Muestre el nombre de la tienda.
     ```
 
-2. OPS ! Parece que a Genie não conseguiu realizar a consulta.
+2. ¡UPS! Parece que la Genie no logró realizar la consulta.
 
-3. A coluna **xpto** da tabela **dim_loja**  é a coluna que contém a informação de nome das lojas explicar que ela contém essa informação e a coluna **id_loja** da tabela **dim_loja** não é o melhor campo para fazer os cruzamentos com a tabela de vendas. Na verdade, a coluna correta é a **cod**!
-Vamos fazer essas correções rodando o seguinte comando no **SQL EDITOR**
+3. La columna **xpto** de la tabla **dim_loja** es la columna que contiene la información del nombre de las tiendas; explique que contiene esa información y que la columna **id_loja** de la tabla **dim_loja** no es el mejor campo para hacer los cruces con la tabla de ventas. En realidad, la columna correcta es cod.
+Vamos a hacer estas correcciones ejecutando el siguiente comando en el **SQL EDITOR**.
 
     ``` sql
     ALTER TABLE dim_loja ALTER COLUMN xpto COMMENT 'Nome da loja';
@@ -110,65 +107,62 @@ Vamos fazer essas correções rodando o seguinte comando no **SQL EDITOR**
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_06.png"><br><br>
 
-3. Faça novamente a pergunta anterior<br><br>
+3. Haga nuevamente la pregunta anterior<br><br>
 
-Pronto! Com essas informação a Genie já consegue responder nossa pergunta corretamente!
+¡Listo! Con esta información, la Genie ya puede responder nuestra pregunta correctamente.
 
-Documentar suas tabelas com comentários é sempre uma boa prática, bem como atribuir chaves primárias e estrangeiras!</br> 
-Isso ajuda a compreensão, a descoberta e o reaproveitamento desses dados por outras pessoas. Além disso, vai acabar ajudando a melhorar as respostas da Genie.
+Documentar sus tablas con comentarios es siempre una buena práctica, así como asignar claves primarias y foráneas!</br>
+Esto ayuda a la comprensión, el descubrimiento y la reutilización de estos datos por otras personas. Además, contribuye a mejorar las respuestas de la Genie.
 </br></br>
 
 
 
-## Exercício 03.04 - Usando instruções
+## Ejercicio 03.04 - Usando instrucciones
 
-Como vimos, a Genie utiliza toda a documentação das nossas tabelas para conseguir responder nossas perguntas. No entanto, por motivos de segurança, ela não tem acesso aos dados em si!
-
-Por isso, para complementar o conhecimento que a Genie já possui sobre nossas bases de dados, podemos também criar instruções!
-
-**Instruções** são nada mais que um conjunto de sentenças em linguagem natural que podem explicar para a Genie informações importantes como:
-- Significado de abreviações e termos técnicos comumente utilizadas na sua empresa
-- Formato do dado (por exemplo, se os registros estão em maiúsculas ou minúsculas)
-- Tratamentos necessários para determinados campos
+Como hemos visto, la Genie utiliza toda la documentación de nuestras tablas para poder responder nuestras preguntas. Sin embargo, por motivos de seguridad, ¡no tiene acceso a los datos en sí!
+Por eso, para complementar el conocimiento que la Genie ya posee sobre nuestras bases de datos, ¡también podemos crear instrucciones!
+**Instrucciones** no son más que un conjunto de oraciones en lenguaje natural que pueden explicar a la Genie información importante, como:
+- Significado de abreviaturas y términos técnicos comúnmente utilizados en su empresa
+- Formato del dato (por ejemplo, si los registros están en mayúsculas o minúsculas)
+- Tratamientos necesarios para determinados campos
 - Cálculos de métricas
+¡Vamos a ver cómo funciona!
 
-Vamos ver como funciona:
-
-1. Faça a pergunta:
+1. Haga la pregunta:
     ``` %md
-    Calcule a quantidade de itens vendidos para prescrição
+    Calcule la cantidad de ítems vendidos para prescripción
     ```
 
-2. Me parece que o resultado não está correto! Na nossa base, o termo prescrição realmente não é mencionado nenhuma vez. Mas acontece que aqui consideramos como medicamentos de prescrição aqueles que não são genéricos. Por isso, adicione a seguinte instrução:
+2. ¡Me parece que el resultado no es correcto! En nuestra base, el término prescripción realmente no se menciona ninguna vez. Pero sucede que aquí consideramos como medicamentos de prescripción aquellos que no son genéricos. Por eso, agregue la siguiente instrucción:
     ``` %md
-    * para calcular indicadores sobre prescrição use   categoria_regulatoria <> 'GENÉRICO'
+    * para calcular indicadores sobre prescripción use  categoria_regulatoria <> 'GENÉRICO'
     ```
 
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/genie_07.png"> </br>
 
-3. Faça novamente a pergunta anterior
+3. Haga nuevamente la pregunta anterior
 
-Pronto! Agora a Genie já pode responder perguntas sobre prescrições também!
+¡Listo! ¡Ahora la Genie ya puede responder preguntas sobre prescripciones también!
 
 </br></br>
 
-## Exercício 03.05 - Usando funções
+## Ejercicio 03.05 - Usando funciones
 
-Outro recurso que podemos utilizar para ajudar a Genie com cálculos complexos são as funções!
+Otro recurso que podemos utilizar para ayudar a la Genie con cálculos complejos son las funciones.
 
-**Funções** permitem guardarmos e parametrizar lógicas complexas dentro do nosso catálogo para serem reutilizadas por outras pessoas e/ou outras consultas de forma simples – inclusive fora da Genie. 
+**Funciones** permiten guardar y parametrizar lógicas complejas dentro de nuestro catálogo para ser reutilizadas por otras personas y/o otras consultas de forma sencilla, incluso fuera de la Genie.
 
-No nosso contexto, as funções também vão funcionar como ferramentas validades e certificadas pelos times responsáveis que a Genie pode decidir utilizar nas suas respostas.
+En nuestro contexto, las funciones también funcionarán como herramientas validadas y certificadas por los equipos responsables, que la Genie puede decidir utilizar en sus respuestas.
 
-Vamos ver na prática:
+¡Vamos a ver en la práctica!
 
-1. Faça a pergunta:
+1. Haga la pregunta:
     ``` %md 
-    Qual o lucro projetado do AAS? 
+    ¿Cuál es la ganancia proyectada del AAS? 
     ```
 
-2. Realmente, não temos informações suficientes na nossa base para responder à essa pergunta! Para isso, crie a função abaixo com a lógica do cálculo do lucro médio projetado de um produto rodando o exemplo abaixo no **SQL EDITOR**:
+2.¡Realmente, no tenemos información suficiente en nuestra base para responder a esta pregunta! Para ello, cree la función siguiente con la lógica del cálculo de la ganancia promedio proyectada de un producto, ejecutando el ejemplo a continuación en el **SQL EDITOR**:
 
     ``` sql
     CREATE OR REPLACE FUNCTION calc_lucro(medicamento STRING)
@@ -185,22 +179,22 @@ Vamos ver na prática:
     GROUP BY ALL
     ```
 
-3. Adicione esta função a sua Genie, muito similar com o realizado no exercício anterior mais precisamos clicar no seta para baixo ao lado de `Add` e selecionar a opção `SQL function` </br>
+3. Agregue esta función a su Genie, muy similar a lo realizado en el ejercicio anterior, pero necesitamos hacer clic en la flecha hacia abajo al lado de `Add` y seleccionar la opción `SQL function`. </br>
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_9.png?raw=true">
 </br>
 
-4. Agora escolha a função que acabamos de criar selecionando o catalágo, schema/database e a função.
+4. Ahora elija la función que acabamos de crear seleccionando el catálogo, schema/database y la función.
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_genie_10.png?raw=true">
 
-4. Faça novamente a pergunta anterior
+4. Haga nuevamente la pregunta anterior
 
-Pronto! Com isso, conseguimos calcular o lucro médio do nosso produto!
+¡Listo! ¡Con esto, logramos calcular la ganancia promedio de nuestro producto!
 
 <br><br>
 
-# Parabéns!
+# Felicitaciones!
 
-Você concluiu o laboratório do **AI/BI Genie**!
+¡Ha concluido el laboratorio del AI/BI Genie!
 
-Agora, você já sabe como utilizar a Genie para analisar seus dados usando somente linguagem natural – além dos principais recursos para refinar sua acurácia e conseguir responder as perguntas mais complexas!
+Ahora, ya sabe cómo utilizar la Genie para analizar sus datos usando únicamente lenguaje natural, además de los principales recursos para refinar su precisión y poder responder las preguntas más complejas.
