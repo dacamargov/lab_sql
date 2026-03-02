@@ -1,22 +1,22 @@
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/header_handson_sql.png">
 
-# Hands-On LAB 03 - Explorando o Query Profiler 
+# Hands-On LAB 03 - Explorando el Query Profiler 
 
-Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Analytics (SQL, Query, DataViz, Genie).
+Entrenamiento Hands-on en la plataforma Databricks con enfoque en las funcionalidades de Analytics (SQL, Query, DataViz, Genie).
 
 
-## Objetivos do Exercício
+# Objetivos del Ejercicio
 
-O objetivo desse laboratório é explorar as funcionalidade de plano de execução das consultas (Query Profiler). Sabendo identificar os gargalos e oportunidades de melhoria de desempenho. </br>
+El objetivo de este laboratorio es explorar las funcionalidades del plan de ejecución de las consultas (Query Profiler), identificando los cuellos de botella y las oportunidades de mejora del rendimiento. </br>
 </br>
 
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/modelagem.png?raw=true">
 
-Vamos utilizar o "Editor SQL".
+Vamos a utilizar el "Editor SQL".
 
-## Exercício 03.01 - Criação da Query
+## Ejercicio 03.01 - Creación de la Query
 
 ``` sql
 CREATE OR REPLACE TABLE big_table AS
@@ -55,23 +55,23 @@ LEFT JOIN estoque es
 
 ```
 
-## Exercício 03.02 - Visualizando o Histórico de execução das Consultas
+## Ejercicio 03.02 - Visualizando el Historial de ejecución de las Consultas
 
 
-No Menu, escolha a opção "Query History"
+En el Menú, elija la opción "Query History"
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_1.png?raw=true" style="height: 300px;">
 
-Filtre as Consultas (p.ex.  Selecione suas próprias Queries):
+Filtre las Consultas (p. ej. Seleccione sus propias Queries):
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_2.png?raw=true">
 
-## Exercício 03.03 - Analisando o Query Profiler
+## Ejercicio 03.03 - Analizando el Query Profiler
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_3.png?raw=true" style="height: 400px;">
 
 
-## Exercício 03.04 - Analisando o Plano de Execução
+## Ejercicio 03.04 - Analizando el Plan de Ejecución
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab03_4.png?raw=true" style="height: 300px;">
 
