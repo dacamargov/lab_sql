@@ -1,42 +1,42 @@
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/header_genie.png">
 
-# Hands-On LAB 06 - Criando o Dashboard AI/BI
+# Hands-On LAB 06 - Creando el Dashboard AI/BI
 
-Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Análise Exploratória e Painéis.
+Entrenamiento Hands-on en la plataforma Databricks con enfoque en las funcionalidades de Análisis Exploratorio y Paneles.
 </br></br>
 
-## Objetivos do Exercício
+## Objetivos del Ejercicio
 
-O objetivo desse laboratório é montar um Painel, utilizando os dados de ações das Big Tech da NASDAQ.</br> 
-***Caso não tenha feito ainda, carregue os dados conforme descrito no Lab 02 - LAB_Notebook.***
+El objetivo de este laboratorio es crear un Panel, utilizando los datos de acciones de las Big Tech de la NASDAQ.</br>
+***Si aún no lo ha hecho, cargue los datos según lo descrito en el Lab 02 - LAB_Notebook.***
 </br></br>
 
 
-## Exercício 06.01 - Criando o Dashboard
+## Ejercicio 06.01 - Creando el Dashboard
 
-No Menu Lateral, escolha a opção DASHBOARDS:
+En el Menú Lateral, elija la opción DASHBOARDS:
 
-Clique na opção **CREATE DASHBOARD**
+Haga clic en la opción **CREATE DASHBOARD**
 
-Na tela do Dashboard, clique na ABA **"Data"** para adicionar uma fonte de dados:
+En la pantalla del Dashboard, haga clic en la PESTAÑA **Data** para agregar una fuente de datos:
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab05_ai_01.png" style="height: 300px;"></br>
 
-Escolha a opção *"Add data source"*
+Escoja la opción *"Add data source"*
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab05_5.png?raw=true" style="height: 300px;">
 
-Digite a palavra de busca **"<seu_database>.stock_bigtech"** escolha a tabela e depois volte para área do **CANVAS**
+Digite la palabra de busca **"<seu_database>.stock_bigtech"** escoja la tabla y despues vuelva para el área del **CANVAS**
 
-Clique no menu suspenso, para adicionar uma nova visualização.  </br>
-Selecione com o mouse a área onde vai ficar o gráfico.
+Haga clic en el menú desplegable para agregar una nueva visualización. </br>
+Seleccione con el mouse el área donde se ubicará el gráfico.
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab05_ai_04.png" style="height: 200px;">
 
 </br></br>
-Na lacuna de texto do ASSISTENTE (Generative AI), faça a seguinte solicitação:
+En el campo de texto del ASISTENTE (Generative AI), haga la siguiente solicitud:
 ``` md
-gráfico de linhas do valor de fechamento por dia e por empresa
+Gráfico de líneas del valor de cierre por día y por empresa
 ```
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/lab05_ai_05.png" style="height: 100px;"></br>
@@ -47,17 +47,17 @@ gráfico de linhas do valor de fechamento por dia e por empresa
 
 ## Exercício 02.03 - Adicionando um FILTRO de página
 
-Clique no menu azul suspenso no ícone de FILTRO.</br>
-Escolha o atributo (Field):  "**company**"
+Haga click en el menu azul en el incone de FILTRO.</br>
+Escoja el atributo (Field):  "**company**"
 </br></br>
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_06.png" width="850px">
 </br></br></br>
 
 
-## Exercício 02.04 - Alterando o título do painel por uma imagem
+## Ejercicio 02.04 - Cambiando el título del panel por una imagen
 
-Crie agora um novo objeto do tipo TEXT. No box que foi criado </br>
-insira o código (markdown) abaixo: </br>
+Ahora cree un nuevo objeto del tipo TEXT. En el cuadro que se creó </br>
+inserte el código (markdown) a continuación: </br>
 </br>
 
 ``` sql
@@ -69,36 +69,36 @@ insira o código (markdown) abaixo: </br>
 </br></br></br>
 
 
-Organize o layout do dashboard para que fique com a aparência da imagem abaixo.</br>
-Faça o devido alinhamento do gráfico no layout.</br>
-Altere o nome do Dashboard na barra superior.</br>
-Clique no botão "**Publish**" para publicar o Painel.
+Organice el diseño del dashboard para que tenga la apariencia de la imagen a continuación.</br>
+Realice la alineación adecuada del gráfico en el diseño.</br>
+Cambie el nombre del Dashboard en la barra superior.</br>
+Haga clic en el botón **Publish** para publicar el Panel.
 </br></br>
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_08.png" width="700px">
 </br></br></br>
 
 
-## Exercício 02.05 - Criando um NOVO contexto de dados
+## Ejercicio 02.05 - Creando un NUEVO contexto de datos
 
-Vamos criar agora um novo contexto de dados.</br>
-Para isso, entre na opção "**SQL Editor**" no MENU lateral do Databricks, </br>
-selecione o Catálogo e o Schema na barra superior do Editor de Query,</br>
-e escreva o texto abaixo:</br>
+Ahora vamos a crear un nuevo contexto de datos.</br>
+Para ello, ingrese a la opción **SQL Editor** en el MENÚ lateral de Databricks, </br>
+seleccione el Catálogo y el Schema en la barra superior del Editor de Query,</br>
+y escriba el texto a continuación:</br>
 
 ``` 
-Selecione o nome da empresa, stock,
-mínimo valor de fechamento, máximo valor de fechamento
-e percentual de variação entre o mínimo e o máximo valor de fechamento
-da tabela dbacademy.<seu_nome>.stock_bigtech
-agrupando por empresa e stock.
-Use a coluna company para achar o nome da empresa
+Seleccione el nombre de la empresa, stock,
+valor mínimo de cierre, valor máximo de cierre
+y porcentaje de variación entre el valor mínimo y el valor máximo de cierre
+de la tabla dbacademy.<su_nombre>.stock_bigtech
+agrupando por empresa y stock.
+Use la columna company para obtener el nombre de la empresa.
 ```
 </br></br>
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_09.png" width="700px">
 </br></br></br>
 
-Acrescente ao resultado a linha de concatenação com o nome da ação (STOCK), </br>
-com o LINK (URL) de uma imagem. </br>
+Agregue al resultado la fila de concatenación con el nombre de la acción (STOCK), </br>
+con el LINK (URL) de una imagen. </br>
 
 ``` sql
 
@@ -114,31 +114,31 @@ GROUP BY company, stock;
 
 ```
 </br>
-Ao executar a query (botão RUN),</br>
-o resultado esperado é o mostrado abaixo:</br>
+Al ejecutar la query (botón RUN),</br>
+el resultado esperado es el mostrado a continuación:</br>
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_10.png" width="700px">
 </br></br></br>
 
-## Exercício 02.06 - Adicionando o NOVO contexto de dados ao Dashboard
+## Ejercicio 02.06 - Agregando el NUEVO contexto de datos al Dashboard
 
-Agora vamos adicionar o novo contexto de dados (calculado na Query);</br>
-como mais uma fonte de dados no Painel.</br>
-Para isso, volte na opção "**Dashboards**" no menu lateral Databricks,</br>
-Escolha o nome do Painel que foi criado,</br>
-e Clique no botão (combo box) de "**Published**" para "**Draft**".
+Ahora vamos a agregar el nuevo contexto de datos (calculado en la Query);</br>
+como otra fuente de datos en el Panel.</br>
+Para ello, regrese a la opción **Dashboards** en el menú lateral de Databricks,</br>
+Elija el nombre del Panel que se creó,</br>
+y haga clic en el botón (combo box) de **Published** a **Draft**.
 </br></br>
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_10b.png" width="700px">
 </br></br></br>
 
-Clique na opção "**Data**".</br>
-No item "Create another Dataset"</br>
-clique no botão "**+Create from SQL**".</br>
+Haga click en la opción "**Data**".</br>
+En el iten "Create another Dataset"</br>
+Haga click en el botón "**+Create from SQL**".</br>
 
 </br></br>
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_11.png" width="700px">
 </br></br></br>
 
-Faça o Copy&Paste do código SQL gerado no exercício anterior:
+Haga el Copy&Paste del código SQL generado en el ejercicio anterior:
 
 ``` sql
 
@@ -153,33 +153,33 @@ FROM dbacademy.<seu_database>.stock_bigtech
 GROUP BY company, stock;
 
 ```
-E depois clique no botão "**RUN**"
+Y despues haga click en el botón "**RUN**"
 </br>
 <img src="https://raw.githubusercontent.com/Databricks-BR/genie_ai_bi/main/images/lab2_12.png" width="700px">
 </br></br></br>
 
-## Exercício 02.07 - Adicionando um novo Gráfico com o contexto novo de dados
+## Ejercicio 02.07 - Agregando un nuevo Gráfico con el nuevo contexto de datos
 
-1. Clique no menu azul suspenso na posição inferior do painel, </br>
-no botão com o ícone de gráfico </br>
-2. Na barra de configuração (lateral direita do painel),</br>
-escolha o nome do nome Dataset (que veio da Query SQL).</br> 
-3. Configure o tipo de Visualização para "Tabela"(Table).</br>
-4. Marque a opção para incluir TODOS os campos na tabela.
-5. Na configuração, clique no campo(coluna) com o nome de "**image**".</br>
+1. Haga clic en el menú azul desplegable en la posición inferior del panel, </br>
+en el botón con el ícono de gráfico </br>
+2.En la barra de configuración (lado derecho del panel),</br>
+elija el nombre del Dataset (que proviene de la Query SQL).</br> 
+3. Configure el tipo de Visualización a "Tabla" (Table).</br>
+4. Marque la opción para incluir TODOS los campos en la tabla.
+5. En la configuración, haga clic en el campo (columna) con el nombre de "**image**".</br>
 </br></br>
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab05_2.png?raw=true" width="700px">
 </br></br></br>
 
-6. Na opção de "Display", configure como "image".
-7. Na opção de "SIZE", coloque o valor de "25" no campo "width".
-8. Na opção de "Default column width", coloque o valor de "150".
+6. En la opción "Display", configúrela como "image".
+7. En la opción "SIZE", coloque el valor "25" en el campo "width".
+8. En la opción "Default column width", coloque el valor "150".
 </br></br>
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab05_3.png?raw=true" width="700px">
 </br></br></br>
 
-Como resultado esperado, teremos a figura abaixo.</br>
-Salve (Publique) novamente o Painel.
+Como resultado esperado, tendremos la figura a continuación.</br>
+Guarde (Publique) nuevamente el Panel.
 </br></br>
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab05_4.png?raw=true" width="700px">
 </br></br></br>
