@@ -1,26 +1,26 @@
 <img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/header_handson_sql.png">
 
-# Hands-On LAB 04 - Criação de um ALERTA
+# Hands-On LAB 04 - Creación de una ALERTA
 
-Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Analytics (SQL, Query, Dask, DataViz, SQL end-point).
+Entrenamiento Hands-on en la plataforma Databricks con enfoque en las funcionalidades de Analytics (SQL, Query, Dask, DataViz, SQL end-point).
 
 
-## Objetivos do Exercício
+## Objetivos del Ejercicio
 
-O objetivo desse laboratório é explorar as funcionalidade de criação de um ALERTA
+El objetivo de este laboratorio es explorar las funcionalidades de creación de una ALERTA
 </br></br>
 
-## Exercício 04.01 - Criando o Alerta
+## Ejercicio 04.01 - Creando la Alerta
 
-Vamos utilizar a opção do menu  "**ALERTS**".
+Vamos a utilizar la opción del menú "ALERTS".
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab04_1.png?raw=true" style="height: 200px;">
 
 </br></br>
 
-Clique no botão **CREATE ALERT**
+Haga clic en el botón CREATE ALERT
 
-O SQL Editor agora é integrado ao Alerta, copia a query abaixo e clique em **RUN**
+El SQL Editor ahora está integrado con la Alerta, copie la query a continuación y haga clic en RUN
 ``` sql
 
 SELECT close AS valor_apple
@@ -32,11 +32,11 @@ ORDER BY date DESC;
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab04_2.png?raw=true">
 </br></br>
 
-A query rodando com sucesso, habilitara a parte de configuração a esqueda, configura conforme imagem abaixo
+La query ejecutándose con éxito habilitará la parte de configuración a la izquierda, configure según la imagen a continuación
 
-* Não esqueça de nomear seu alerta: Sugestão: "Query_Alert"+ <SEU_LOGIN> e clique em **CREATE**
+* No olvide nombrar su alerta: Sugerencia: "Query_Alert"+ <SU_LOGIN> y haga clic en CREATE
 
-* No campo **Notify** coloque o email usado para criar a conta do Databricks Free Edition
+* En el campo Notify coloque el correo electrónico usado para crear la cuenta de Databricks Free Edition
 
 
 <img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab04_3.png?raw=true" style="height: 700px;">
