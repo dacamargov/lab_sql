@@ -47,7 +47,7 @@ La Free Edition ofrece un sitio de Databricks workspace fácil de usar, donde es
 
 ## Comunidad Databricks LATAM
 
-- Grupo en LinkedIn [Databricks Brasil - Lakehouse 🏠 🇧🇷](https://www.linkedin.com/groups/14100135)
+- Grupo en LinkedIn [Databricks LATAM - Lakehouse 🏠 🇧🇷](https://www.linkedin.com/groups/14082071)
 
 </br>
 
