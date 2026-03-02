@@ -1,29 +1,28 @@
 
 <img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/header_handson_sql.png">
+Hands-On LAB 02 - Ejecutando comandos a través del Notebook
 
-# Hands-On LAB 02 - Executando comandos pelo Notebook
+Entrenamiento Hands-on en la plataforma Databricks con enfoque en las funcionalidades de Analytics (SQL, Query, DataViz, Genie).
+</br> </br>
 
-Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Analytics (SQL, Query, DataViz, Genie).
- </br> </br>
+Objetivos del Ejercicio
 
-## Objetivos do Exercício
+En este ejercicio vamos a importar un Notebook (en lenguaje Python) para copiar las bases de datos en formato CSV (texto separado por comas), que serán utilizadas en los próximos ejercicios.
+</br>
 
-Nesse exercício vamos importar um Notebook (em linguagem Python) para copiar as bases de dados no formato CSV (texto separado por vírgulas), que serão utilizados nos próximos exercícios.
- </br>
+Ejercicio 2:
 
+Elija la opción del MENÚ: "Workspace", según la figura a continuación.</br>
 
-## Exercício 2:
+Seleccione "Home".</br>
 
-* Escolha a opção do MENU:  "Workspace", conforme figura abaixo.</br>
-* Selecione "Home".</br>
-* Clique com o botão direito do mouse na área destacada.</br>
-* Selecione a opção IMPORTAR.</br> </br>
+Haga clic con el botón derecho del mouse en el área destacada.</br>
 
-<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab02_1.png?raw=true">
-</br></br>
-Na janela de importação, clique na opção "**URL**".
+Seleccione la opción IMPORTAR.</br> </br>
 
-No campo texto da URL, digite o endereço do LINK destacado abaixo:
+<img src="https://github.com/Gabriel-Rangel/lab_sql/blob/main/images/v2_lab02_1.png?raw=true"> </br></br> En la ventana de importación, haga clic en la opción "**URL**".
+
+En el campo de texto de la URL, escriba la dirección del LINK destacado a continuación:
 
 ``` html
 https://github.com/CaduBettanim/lab_sql/blob/main/02_LAB_Notebook/lab02_01_carga_csv.ipynb
