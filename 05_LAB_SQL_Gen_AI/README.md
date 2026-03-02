@@ -1,37 +1,35 @@
 <img src="https://raw.githubusercontent.com/Databricks-BR/lab_sql/main/images/header_handson_sql.png">
 
-# Hands-On LAB 07 - Funcionalidades de Generative AI no SQL
+# Hands-On LAB 07 - Funcionalidades de Generative AI en SQL
 
-Treinamento Hands-on na plataforma Databricks com foco nas funcionalidades de Analytics (SQL, Query, Dask, DataViz, SQL end-point).
+Entrenamiento Hands-on en la plataforma Databricks con enfoque en las funcionalidades de Analytics (SQL, Query, Dask, DataViz, SQL end-point).
 
+Ejercicio 07.01 - Sobre las Funcionalidades:
 
-## Exercício 07.01 - Sobre as Funcionalidades:
+Una forma de aplicar los modelos de IA Generativa es utilizar las Databricks AI SQL Functions.
 
+Estas permiten el uso de SQL, un lenguaje ampliamente utilizado por analistas de datos y de negocio, para ejecutar una LLM sobre nuestras bases de datos corporativas. Con esto, también podemos crear nuevas tablas con la información extraída para ser utilizadas en nuestros análisis de manera más sencilla.
 
-Uma forma de aplicar os modelos de IA Generativa é utilizar as Databricks AI SQL Functions.
-
-Estas permitem a utilização de SQL, uma linguagem amplamente utiliza por analistas de dados e de negócio, para executar uma LLM sobre nossos bancos de dados corporativos. Com isso, também podemos criar novas tabelas com as informações extraídas para serem utilizadas em nossas análises mais facilmente.
-
-Existem funções nativas para executar tarefas pré-definidas ou enviar qualquer instrução desejada para ser executada. Seguem as descrições abaixo:
+Existen funciones nativas para ejecutar tareas predefinidas o enviar cualquier instrucción deseada para ser ejecutada. A continuación se describen:
 
 
 
 | Gen AI SQL Function | Descrição |
 | -- | -- |
-| [ai_analyze_sentiment](https://docs.databricks.com/pt/sql/language-manual/functions/ai_analyze_sentiment.html) | Análise de Sentimento |
-| [ai_classify](https://docs.databricks.com/pt/sql/language-manual/functions/ai_classify.html) | Classificação de Texto |
-| [ai_extract](https://docs.databricks.com/pt/sql/language-manual/functions/ai_extract.html) | Extração de Termos |
-| [ai_fix_grammar](https://docs.databricks.com/pt/sql/language-manual/functions/ai_fix_grammar.html) | Correção de Gramática |
-| [ai_gen](https://docs.databricks.com/pt/sql/language-manual/functions/ai_gen.html) | Geração de Textos | 
-| [ai_mask](https://docs.databricks.com/pt/sql/language-manual/functions/ai_mask.html) | Marcaramento de dados sensíveis |
+| [ai_analyze_sentiment](https://docs.databricks.com/pt/sql/language-manual/functions/ai_analyze_sentiment.html) | Análisis de Sentimiento |
+| [ai_classify](https://docs.databricks.com/pt/sql/language-manual/functions/ai_classify.html) | Clasificación de Texto |
+| [ai_extract](https://docs.databricks.com/pt/sql/language-manual/functions/ai_extract.html) | Extracción de Terminos |
+| [ai_fix_grammar](https://docs.databricks.com/pt/sql/language-manual/functions/ai_fix_grammar.html) | Corrección de Gramática |
+| [ai_gen](https://docs.databricks.com/pt/sql/language-manual/functions/ai_gen.html) | Generación de Textos | 
+| [ai_mask](https://docs.databricks.com/pt/sql/language-manual/functions/ai_mask.html) | Marcado de datos sensibles |
 | [ai_query](https://docs.databricks.com/pt/sql/language-manual/functions/ai_query.html) | Consultas Gen Ai |
-| [ai_similarity](https://docs.databricks.com/pt/sql/language-manual/functions/ai_similarity.html) | Análise de Similaridade |
-| [ai_summarize](https://docs.databricks.com/pt/sql/language-manual/functions/ai_summarize.html) | Sumarização de Textos |
-| [ai_translate](https://docs.databricks.com/pt/sql/language-manual/functions/ai_translate.html) | Tradução de Textos |
+| [ai_similarity](https://docs.databricks.com/pt/sql/language-manual/functions/ai_similarity.html) | Análisis de Similitudes |
+| [ai_summarize](https://docs.databricks.com/pt/sql/language-manual/functions/ai_summarize.html) | Resumen de Textos |
+| [ai_translate](https://docs.databricks.com/pt/sql/language-manual/functions/ai_translate.html) | Traducción de Textos |
 
 
 </br></br>
-Para esse exercício, vamos explorar as funcionalidades citadas,  conforme exemplo abaixo:
+Para este ejercicio, vamos a explorar las funcionalidades mencionadas, según el ejemplo a continuación:
 
 **ai_translate**
 ``` md
@@ -46,7 +44,7 @@ SELECT texto as original,
 
 ``` md
 SELECT ai_extract(
-    'Envie um email para jane.doe@example.com sobre a reunião que marcamos as 10am.',
+    'Envie un email para jane.doe@example.com sobre la reunión que marcamos a las 10am.',
     array('email', 'time')
   );
 ```
@@ -55,7 +53,7 @@ SELECT ai_extract(
 ``` md
 
 SELECT ai_mask(
-    'Me chamo Flavio Da Silva. Entre em contato comigo no 555-1234 ou nos visite na Av.Paulista, 1000',
+    'Me llamo Flavio Da Silva. Contácteme al 555-1234 o visítenos en Av. Paulista, 1000.,
     array('phone', 'address')
 );
 ```
@@ -63,15 +61,15 @@ SELECT ai_mask(
 **ai_gen**
 ``` md
 SELECT principio_ativo
-     , ai_gen(concat('forneça mais detalhes de como o medicamento ',principio_ativo,' atua no organismo de uma pessoa adulta. Forneça um texto de até 50 palavras')) 
+     , ai_gen(concat('Proporcione más detalles sobre cómo el medicamento ',principio_ativo,' actúa en el organismo de una persona adulta. Brinde un texto de hasta 50 palabras.')) 
   FROM dbacademy.<seu_database>.dim_medicamento 
  LIMIT 10
  ;
 ```
 
-Agora vamos pegar nossa tabela de medicamentos,</br> 
-criar uma nova coluna atribuindo comentários a cada medicamento de forma aleatória  usando a função **ai_gen** </br>
-e depois criar uma nova coluna com a análise de sentimento da coluna de comentários usando a função **ai_analyze_sentiment**.
+Ahora vamos a tomar nuestra tabla de medicamentos,</br>
+crear una nueva columna asignando comentarios a cada medicamento de forma aleatoria usando la función **ai_gen </br>
+y luego crear una nueva columna con el análisis de sentimiento de la columna de comentarios usando la función **ai_analyze_sentiment.
 
 ``` md
 WITH 
@@ -79,8 +77,8 @@ sizing AS (SELECT * FROM dbacademy.<seu_database>.dim_medicamento LIMIT 10),
 comentarios AS (
     SELECT
     CASE
-            WHEN rand() > 0.5 THEN ai_gen(CONCAT('Escreva em português um comentário positivo sobre o medicamento: ', nome_medicamento))
-            ELSE ai_gen(CONCAT('Invente em português um comentário negativo sobre o medicamento', nome_medicamento,'. Esse medicamento nao existe. seja criativo'))
+            WHEN rand() > 0.5 THEN ai_gen(CONCAT('Escriba en español un comentario positivo sobre el medicamento: ', nome_medicamento))
+            ELSE ai_gen(CONCAT('Invente un comentario negativo sobre el medicamento en español', nome_medicamento,'. Ese medicamento no existe. sea criativo'))
     END AS medicamento_review
     FROM sizing
 )
@@ -92,7 +90,7 @@ comentarios AS (
 **ai_fix_grammar**.
 
 ``` md
-SELECT ai_fix_grammar('Nóis tá com fome. Bora fazer um break e comer um pão de queijo minero dos bão?');
+SELECT ai_fix_grammar('Estamos com fome. Vamos fazer uma pausa e comer um pão de queijo mineiro bem gostoso?');
 ```
 
 </br></br>
