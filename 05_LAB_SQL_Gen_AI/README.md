@@ -36,7 +36,7 @@ Para esse exercício, vamos explorar as funcionalidades citadas,  conforme exemp
 **ai_translate**
 ``` md
 SELECT texto as original, 
-       ai_translate(texto, 'br') as traducao
+       ai_translate(texto, 'sp') as traducao
   FROM (select 'Hello, how are you?' as texto)
 ;
 ```
@@ -46,7 +46,7 @@ SELECT texto as original,
 
 ``` md
 SELECT ai_extract(
-    'Envie um email para jane.doe@example.com sobre a reunião que marcamos as 10am.',
+    'Envie um email para jane.doe@example.com sobre la reunion que tenemos a las 10am.',
     array('email', 'time')
   );
 ```
@@ -55,7 +55,7 @@ SELECT ai_extract(
 ``` md
 
 SELECT ai_mask(
-    'Me chamo Flavio Da Silva. Entre em contato comigo no 555-1234 ou nos visite na Av.Paulista, 1000',
+    'Me llamo Daniel Vargas. Entre en contato conmigo al 555-1234 o visitenos en la Av.Paulista, 1000',
     array('phone', 'address')
 );
 ```
@@ -63,7 +63,7 @@ SELECT ai_mask(
 **ai_gen**
 ``` md
 SELECT principio_ativo
-     , ai_gen(concat('forneça mais detalhes de como o medicamento ',principio_ativo,' atua no organismo de uma pessoa adulta. Forneça um texto de até 50 palavras')) 
+     , ai_gen(concat('Proporcione más detalles sobre cómo el medicamento ',principio_ativo,' actúa en el organismo de una persona adulta. Proporcione un texto de hasta 50 palabras.')) 
   FROM dbacademy.<seu_database>.dim_medicamento 
  LIMIT 10
  ;
